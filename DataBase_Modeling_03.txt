@@ -46,3 +46,9 @@
 -4. Relation Entity
   = 1. 행위 + 개체 (Active + Entity = Relation Entity)
   = 2. Relation 이지만 M:N 이면 Entity => Relation Entity
+
+3. Entity 의 선정
+- 1. 매우 일반적인 용어로 정의하더라도 오류 발생 가능성 있음
+- 2. 반드시 어떤 요소들이 포함되었는지 명확하게 정의
+- 3. Entity 가 명확하지 않으면 추후 많은 혼란 발생
+- 4. Entity 정의가 명확해졌으면, 가장 내용에 부합되는 명칭을 부여
