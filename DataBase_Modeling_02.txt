@@ -28,4 +28,14 @@
      -> E-R Model 에 반영된 정보의 요구사항을 소개할 데이터베이스 설계로 바꾸는 작업
      -> 작성된 DataBase Design 을 이용하여 물리적인 관계형 DB Table 을 생성시키는 작업
 
-4. 
+- 2. 접근 방법
+  = 1. 접근방법 1 (후 Modeling)
+     -> Function Modeling -> DFD -> Data Store -> DFD => 현실적으로 가장 많이 사용하는 방법
+     -> 기능이 변하면 데이터 모양도 변경
+  
+  = 2. 접근방법 2 (두 가지 이상 병렬 처리) => 반드시 다수의 전문가 확보 시 적용
+     -> Function Modeling <-> Data Modeling (DFD & Data Store 동시 진행)
+     -> 업무 별로 분할하여 진행
+     -> 대형 프로젝트 & 다수의 개발 팀 => 일정 준수 용이
+ 
+  = 3. 
