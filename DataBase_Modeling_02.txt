@@ -38,4 +38,18 @@
      -> 업무 별로 분할하여 진행
      -> 대형 프로젝트 & 다수의 개발 팀 => 일정 준수 용이
  
-  = 3. 
+  = 3. 접근방법 3 (선 Data Modeling, 후 Function Modeling)
+     -> Data Modeling -> DFD -> Function Modeling -> DFD -> Data Store
+     -> 객관적, 구체적
+     -> 업무를 모를 때 객관화가 쉽지 않다. (단점) -> 전문 모델러 확보 시 진행
+
+4. 논리적 데이터 모델링 (Logical Modeling)
+- 1. 전력 수립 및 분석 단계에서 실시
+- 2. 요구 되는 정보를 ERD Model 로 구현하는 것
+  = 1. ERD
+     -> Entity = 관리할 대상이 되는 것 (실체) = 집합
+     -> Relationship = Entity 의 대응 관계
+     -> Attribute = 관리할 정보의 구체적 항목
+
+  = 2. E-R Model 은 H/W 나 S/W 에 독립적 (HDB, NDB, RDB)
+
