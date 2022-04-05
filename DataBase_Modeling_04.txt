@@ -109,4 +109,15 @@
   
     = 4. 놓쳐 버린 Entity 가 있더라도 각 단계에 충실하면 결국엔 다시 나타남
     = 5. Key Entity 를 놓치면 시행착오 발생
-
+  
+  - 2. 의미 상의 주어
+    = 누가, 무엇을, 언제, 어디서
+  
+  - 3. 관리할 속성
+    = 어떻게, 왜
+  
+  - 4. TOP-DOWN 방식
+    = Key Entity -> 하위 Entity
+  
+  - 5. BOTTOM-UP 방식
+    = 하위 Entity -> Key Entity
