@@ -1,0 +1,15 @@
+1. Dependency 분류법
+- 1. Key Entity 와 Main Entity 끄집어 내기
+- 2. Key Entity 예시 구조 (난이도 = 분류코드)
+  = 1. 고급 3개
+  = 2. 중급 3개
+  = 3. 초급 2개
+
+- 3. Main Entity 예시 구조 (난이도 = 분류코드)
+  = 1. 고급 2개
+  = 2. 중급 2개 (고급과도 겹침)
+  = 3. 초급 2개
+
+- 4. Key Entity 와 Main Entity 끄집어 내기
+  = 1. Main Entity 에서 초급이 3개일 경우 => Key Entity 의 값 그대로 가지고 옴
+  = 2. Main Entity 에서 중급이 2개인데, 고급 2개하고도 값이 겹치는 경우 => Dependency 는 분류코드
