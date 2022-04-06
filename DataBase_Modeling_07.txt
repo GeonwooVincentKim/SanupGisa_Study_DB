@@ -82,3 +82,11 @@
   = 2. 여러 (4 ~ 5) 장을 가지고 있음
   = 3. 색깔 넣기 가능
   = 4. Copy 용이 (Version 관리 용이)
+
+5. 분할 정복 (Divide & Conquer)
+- 1. Group 별로 분류 (Key Entity, Main Entity)
+- 2. 가능한 한 그룹이 20 ~ 30개 이상이 되지 않도록 할 것
+- 3. 통상 SubSystem 단위로 분류
+- 4. 매우 큰 시스템에서는 주유 업무별로 분류
+- 5. 분류된 Group 별로 타 Group 과 연관 있는 Entity 를 보충
+
