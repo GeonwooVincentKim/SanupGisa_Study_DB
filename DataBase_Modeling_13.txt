@@ -1,0 +1,13 @@
+1. 상세 개념데이터 모델링
+- 1. 데이터 모델의 상세화
+  = 1. 정규화 (Normalization) 작업
+  = 2. M : M Relationship 의 해소
+
+- 2. 데이터 모델의 통합화
+  = 1. 순환 관계 (Recursive Relationship) 로 통합
+  = 2. 역할의 통합
+  = 3. SUBTYPE 을 이용한 통합
+  = 4. 배타적 관계 (Exclusive Relationship) 로 통합
+  = 5. 복잡한 관계 (Complex Relationship) 의 통합
+
+- 3. 이력 (Historical) 관리의 반영
