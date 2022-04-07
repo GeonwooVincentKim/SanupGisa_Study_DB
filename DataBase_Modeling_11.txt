@@ -1,0 +1,38 @@
+1. ATTRIBUTE 의 지정
+- 1. 지정 목록
+  = 1. DFD 의 DATA STORE
+  = 2. 현업부서의 각종 장표, 보고서
+  = 3. 기존 시스템 참조
+  = 4. FILE DUMP
+  = 5. 타사 자료 참조
+  = 6. 유사 시스템 참조
+  = 7. 사용자에게 질문 및 확인
+  = 8. 장래 사용예상 항목 감안
+
+- 2. 지정 목록 점검
+  = 1. 과연 언제 사용되는가
+  = 2. 어떻게 사용되는가
+  = 3. 정말 필요한가
+  = 4. 추출 항목 (Derived Data) 이 아닌
+
+2. 식별자 (UID) 지정 => 기본키
+- 1. UID -> Unique IDentifier
+- 2. 하나, 혹은 하나 이상의 ATTRIBUTE 로 구성
+- 3. 모든 ENEITY 는 반드시 UID 를 가져야 함
+- 4. UID 를 가지지 못하면 ENTITY 가 아님
+- 5. UID 구성하는 모든 ATTRIBUTE 는 반드시 존재 (Mandatory)
+- 6. UID Attribute 에는 `#*` 를 표시
+- 7. 대부분의 Key Entity 는 하나의 ATTRIBUTE 로 구성
+  = 1. `외` 자임
+  = 2. 우리 성씨와 같다고 생각하면 됨
+     -> Example => `김`씨, `박`씨, `이`씨, `최`씨 ..
+
+- 8. Main Entity 와 Action Entity 는 의미상의 주어가 UID
+- 9. 상황에 따라 의미상의 주어는 인조키 (얼굴마담) 로 대체 될 수 있음
+- 10. 무조건 인조키 만들거나 상속받은 구성만으로 UID 구성하는 것은 아님 
+- 11. 전략적인 판단 요구
+- 12. 자신의 ATTRIBUTE 가 아니면서 RELOATION 을 위해 존재하게 되는 ATTRIBUTE 를 자신의 ATTRIBUTE 로 표시해선 안됨
+
+2-1. 식별자 Tip
+- 1. 모델링의 기본키 = 식별자
+- 2. Table 에서의 기본키 = PK
