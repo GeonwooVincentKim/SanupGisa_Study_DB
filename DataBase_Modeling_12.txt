@@ -1,0 +1,41 @@
+1. 인조 (Artificial) UID
+- 식별자가 1개 초과의 수 (예를 들어서 7개) 이면 Artificial UID 를 사용하여 좀 더 효율적으로 사용 가능
+
+2. UID 지정 절차
+- 1. ATTRIBUTE 검토
+  = 1. 기존 통에 들어있는 식별자를 검증해서 Mandatory Attribute 가 있는지 확인
+  = 2. 식별자 있는지 확인
+  = 3. 어떤 결합이 식별자가 될 수 있는지 확인
+  = 4. 결합된 Attribute 중에도 없으면 인공 Attribute 확인
+
+- 2. RelationShip 고려
+  = 1. 식별자가 없을 경우 RelationShip 이 누락되었을 경우가 있으므로, 확인
+  = 2. ENTITY 를 식별할 RelationShip 있는지 확인
+  = 3. RelationShip = Mandatory + One and Only One 여부 확인
+
+- 3. UID 검증
+  = 1. Sample DATA 작성
+  = 2. UID 를 구성하는 Attribute 와 RelationShip Mandatory 인지 확인
+
+3. UID 의 2가지 역할 (인조 UID)
+- 1. 식별자 역할
+- 2. 정보로써의 가치
+- 3. Example
+  = 1. `A` ENTITY (할아버지) - `B` ENTITY (아버지)- `C` ENTITY (아들)
+     -> 1. `A` ENTITY 와 `B` ENTITY 사이에 UID Bar 를 끊을지 안끊을지 영향 받는 것은 `C` ENTITY 
+     -> 2. `B` ENTITY 가 받는 것이 아닌 `C` ENTITY 가 영향을 받음
+
+  = 2. `B` ENTITY 는 UID Bar 에 상관없이 `A` ENTITY 의 UID 를 상속 받음
+  = 3. 자식 ENTITY 인 `C` 에 상속 여부에 영향 미침
+  = 4. 자세하게 확인해야 할 것
+     -> 1. `C` ENTITY 는 조부 ENTITY 인 `A` 의  UID 정보로써 필요한가?
+     -> 2. `B` ENTITY 는 얼마나 많은 자식 ENTITY 를 거느리고 있는가?
+     -> 3. 얼마나 많은 자식 ENTITY 들이 조부 ENTITY 와 친밀한가?
+     -> 4. `C` 나 그 이하의 자식 ENTITY 들이 얼마나 조부 ENTITY 의 UID 를 정보로써 원하는가?
+     -> 5. 상속 단절(UID BAR 없이) 시키고 물리적 단계에서 접근경로 단축
+         => 단, 자식 ENTITY 중 일부 만이 조부 ENTITY 의 UID 를 정보로써 원할 경우
+
+4. 상속의 원리
+- 할아버지 UID 가 손자에게 상속 되어 있을 경우
+  = 1. 그림상 -> 아버지 경유해야 함
+  = 2. 실제 Access -> 바로 할아버지와 연결 가능
