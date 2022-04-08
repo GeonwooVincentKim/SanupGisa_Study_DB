@@ -1,0 +1,13 @@
+1. M : M Relationship 해소
+- 1. 실세계의 업무 중 대부분은 M : M 관계
+- 2. Key Entity 와 Key Entity 간에는 대부분 M : M 관계
+- 3. 지속적으로 발생되는 대다수의 ENTITY 는 M : M 관계
+- 4. 만약, 어떤 ATTRIBUTE 가 RELATIONSHIP 을 나타내고 있다면 그 RELATIONSHIP 은 분해되어야 함
+- 5. M : M Relationship 은 새로운 교차 (Intersection) ENTITY 를 추가하여 M : 1 관계로 바뀜
+
+2. M : M 관계 해결 원리
+- 1. M : M 관계 정의
+  = 1. 특정 ENTITY (ENTITY A) 가 다른 ENTITY (ENTITY A 와 ENTITY C) 와 서로 1 : M 관계를 맺고 있음
+  = 2. ENTITY A 에도 `M` 이 있고, ENTITY B 에도 `M` 이 있으면 두 개의 M 이 얽혀있는 관계를 `M : M 관계` 라고 정의
+
+- 2. 
