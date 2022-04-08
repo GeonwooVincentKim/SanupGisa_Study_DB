@@ -43,6 +43,15 @@
   = 2. 외부에서 가져온 것만으로 생성
   = 3. 새로운 UID
 
+6. ATTRIBUTE 가 없는 Intersection Entity
+- 1. ATTRIBUTE 가 하나도 없는 ENTITY 종류
+  = 1. Relation ENTITY 
+  = 2. Intersection ENTITY 
+  = 3. Association ENTITY
+
+- 2. ATTRIBUTE 가 없는 Intersection Entity 는 양쪽의 상호 참조사항만 가짐
+- 3. Intersection ENTITY 는 `ENTITY 는 반드시 Attribute 를 가져야 함` 는 원칙을 지키지 않을 수 있음
+- 4. 이런 ENTITY 는 항상 UID Bar 에 의해 UID 가 지정됨
 
 
 
