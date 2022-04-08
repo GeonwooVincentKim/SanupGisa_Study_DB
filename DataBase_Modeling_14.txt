@@ -10,4 +10,9 @@
   = 1. 특정 ENTITY (ENTITY A) 가 다른 ENTITY (ENTITY A 와 ENTITY C) 와 서로 1 : M 관계를 맺고 있음
   = 2. ENTITY A 에도 `M` 이 있고, ENTITY B 에도 `M` 이 있으면 두 개의 M 이 얽혀있는 관계를 `M : M 관계` 라고 정의
 
-- 2. 
+- 2. X 집합의 `A`에 대응되는 Y집합을 찾는 방법
+  = 1. X 집합 (A, B, C)
+  = 2. Y 집합 (10, 20, 30)
+  = 3. 중간에 CONNECTION 설정된 곳 (A 10, A 20, C 10, B 20, C 30)
+
+
