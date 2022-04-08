@@ -27,3 +27,18 @@
 - 4. 데이터 모델로 표현
   = 1. Relation ENTITY => X, Y 결합된 RECORD 목록
   = 2. M : M 관계에 있을 때에는 Relation ENTITY 가 만들어지면, 두 집합 (X 집합, Y 집합) 사이에 생겼던 모든 관계들을 Keeping (보존) 가능
+  = 3. M : M 관계는 Relation ENTITY 를 통해 해소가 됨
+
+3. M : M관계 특징
+- 1. M : M 관계의 Default => 무조건 점선으로 표현
+- 2. M : M Relation 이 풀린 후, Relation Entity 가 만들어지면, 각 집합에서 Relation Entity 로 연결되는 선을 직선으로 표현 (사랑의 스튜디오)
+- 3. X 집합에도 있고, Y 집합에도 있어서 `짝(Pair) 이 맞는 데이터만 들어오기 때문에` (`성공한 짝(Pair) 만 들어오기 때문에`) 당연히 선을 직선으로 표현
+
+4. M : M Relationship 작도법
+- 각 ENTITY 를 배치 후, 서로의 RELATIONSHIP 을 연결할 때, 사선이 안생기도록 잘 배치하여 작도
+
+5. M : M Relationship 의 UID
+- UID 생성 경우
+  = 1. 외부에서 가져온 것 + 배치일
+  = 2. 외부에서 가져온 것만으로 생성
+  = 3. 새로운 UID
