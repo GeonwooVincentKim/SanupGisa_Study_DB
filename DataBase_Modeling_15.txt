@@ -52,3 +52,16 @@
 3. BOM Data Model
 - 1. BOM (Bill Of Material) Model 은 M : M 순환관계
 - 2. 새로운 교차 (Intersection) ENTITY 를 추가하여 M : 1 관계로 변경
+- 3. 볼트와 너트
+  = 1. Example -> 자동차
+     -> 1. 자동차 엔진
+     -> 2. 자동차 트렁크
+     -> 3. 자동차 바퀴
+  
+  = 2. 통상적으로 자식은 반드시 하나의 부모로부터 값을 가짐
+  = 3. BOM Data Model 에서는 다른 부모로부터 값을 가질 수 있음 -> 볼트와 너트
+
+- 4. 부모는 N 개의 자식 부품 소유, 자식은 N 개의 부모 부품 소유
+  = N : N 관계 성립
+
+- 5.  M : M 순환관계에서 Intersection ENTITY (Relation ENTITY) 가 만들어짐
