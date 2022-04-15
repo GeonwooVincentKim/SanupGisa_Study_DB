@@ -136,3 +136,6 @@
          => 1. Connected by Start 의 매커니즘을 모르면 이런 문제 발생
          => 2. 이 매커니즘에 관한 내용이 부족해서 사람들이 착각하여 문제가 발생 됨
 
+  = 5. Recursive 
+     -> 1. 두 개의 Table JOIN 시, Y 는 X 의 Data 를 읽어서 대응되는 Y 를 찾기 (Recursive 아닐 경우)
+     -> 2. Recursive 를 실행 시, 지금 차 있는 Record 를 가지고 선택된 Record 와 연결된 자식 Record 을 찾을 때 사용 (Recursive 일 경우)
