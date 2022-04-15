@@ -109,11 +109,20 @@
   = 가장 Simple 한 방법으로 Data 를 관리하고 있다가 내가 풀고 싶은 구조가 나오면 어디서부터 역전개, 어디서부터 순전개라고 말하는 순간에 이 구조는 정해야 함
 
 7. 순환 관계의 처리 SQL (JOIN 과 비교)
-- 1. 기존의 JOIN 문장과 비교를 해서 Connected-By Starter 를 가지고 풀어내는 Structuer 문장
-- 2. 기존의 JOIN 문장에 비교를 해서 설명하자면, 두 개의 구조상의 차이가 무엇인지, 동일한 것이 무엇인지 이해해야 함
+- 1. 기존의 JOIN 문장과 비교를 해서 Connected-By Starter 를 가지고 풀어내는 Structuer 문장 (JOIN Table)
   = 1. 최종적으로는 Drive 조건 Check 조건을 다 만족하는 최종 결과가 나옴
   = 2. 일을 하는 내부 과정을 살펴보면 일을 주도하는 부분이 있고, 그 주도해서 끄집어 내놓은 것을 다시 Check 조건에서 버리는 역할이 있음
   = 3. Driving 관리자 => DataBase 의 Optimizer 가 누가 관리자인지 판단
 
+- 2. 기존의 JOIN 문장에 비교를 해서 설명하자면, 두 개의 구조상의 차이가 무엇인지, 동일한 것이 무엇인지 이해해야 함 (JOIN 조건)
+  = 1. CONNECT BY START With 문장의 연결 고리는 WHERE Clause 가 아님
+  = 2. Connect By 절에 쓴 Condition 이 Join 의 연결고리
+
+- 3. 전처리 조건
+  = START WITH => Driving Condition
+
+- 4. CHECK 조건
+  = 1. Driving Condition 을 뺀 나머지는 CHECK 조건
+  = 2. Check 조건은 Where Clause 에 있음
 
 
