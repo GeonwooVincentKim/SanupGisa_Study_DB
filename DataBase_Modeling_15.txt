@@ -125,4 +125,14 @@
   = 1. Driving Condition 을 뺀 나머지는 CHECK 조건
   = 2. Check 조건은 Where Clause 에 있음
 
+- 5. WHERE 조건
+  = 1. CONNECT BY (Condition) => 전개를
+  = 2. START WITH => 시작해서
+  = 3. CONNECT BY => 전개를 연결한 다음에
+  = 4. WHERE => Check 조건을 봐서 쓸 것인지 부릴 것인지 판단하는 조건
+     -> 1. 일의 양을 줄여주는 조건 아님
+     -> 2. 일을 나열해 놓고 주문이 늘 것인지 버릴 것인지 결정해주는 조건 => (WHERE 조건)
+     -> 3. WHERE 조건을 상세하게 주고, 나머지 조건을 제대로 주지 않는다면 일 (데이터) 이 스스로 판단한 필요없는 것 (Data) 들의 수가 많아짐
+         => 1. Connected by Start 의 매커니즘을 모르면 이런 문제 발생
+         => 2. 이 매커니즘에 관한 내용이 부족해서 사람들이 착각하여 문제가 발생 됨
 
