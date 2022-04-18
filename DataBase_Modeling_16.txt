@@ -49,3 +49,18 @@
          
          => 2. where x.A = Y A'  -> Connect by Prior A = A'  (자기 Record 가 B = B' 인 것은 없음, Prior 라는 Keyword 가 없어서 비정상)
                     and x.B = Y B'                             B = B'
+         
+         => 3. Connect By Prior 는 역전개 또는 순전개를 하는 것이 아닌, `X.A`, `Y.B` 와 같이 진행
+
+    -> 2. 전개를 하며 하위 Depth 로 내려 가다가 특정 Data 를 만나면 그 Data 이하의 Depth 의 DATA 에 대해선 전개 금지 (SELECT 문 - Ordinary)
+    Level 0.         0           => X 표시가 시작된 부분부터 시작
+    Level 1.    0         0
+    Level 2.   0  0        X
+    Level 3.   0          X X        
+
+    -> 3. 전개를 계속 하면서 하위 Depth 로 내려가되, 마지막의 Return 값에는 어떤 특정 Data 만 만나지 않아도 됨
+    Level 0.         0           => X 표시만 있는 부분을 제외한 나머지 Data 보여주기 (Return 시)
+    Level 1.    0         0
+    Level 2.   0  0        X
+    Level 3.   0          0  0
+   
