@@ -9,5 +9,10 @@
 
 2. M:M 계층 구조와 코드 부여 방법
 - 1. 동일한 개체가 여러 개의 Code 를 가지게 됨
+  = 1. N 계층이 될 때에는 현재 실행되고 있는 Data 를 잠시 Save 한 후, 다른 Data 를 실행해야 함
+  = 2. Program 의 Depth (깊이) 가 몇 단계로 구성되어 있는지 잘 모를경우, Logic 을 만들어서 구축 (C언어 or COBOL)
+  = 3. SQL 을 사용할 경우, Data 를 잠시 Save 및 다른 Data 를 실행할 필요 없이 CONNECT BY START WITH 로 스스로 모든 Data 들을 보여줌
+
 - 2. 같은 개체이지만 구분이 불가능
 
+3. 
