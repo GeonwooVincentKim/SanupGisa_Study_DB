@@ -71,5 +71,34 @@
   
   = 2. Relationship 에 변화가 발생하지 않음
   = 3. OR, IN, BETWEEN 처리 발생
+  = 4. SELECT * FROM 연예인 WHERE SUM_TYPE IN ('2', '3');
+
+4. SubType 선정기준
+- 1. SubType 은 한 가지 이상 존재할 수 없음
+  = 1. Example
+     -> 1. 사원 Entity
+         => 1. 내근사원
+         => 2. 설계사
+         => 3. 임시직
+  
+     -> 2. (사원 Entity 를 이어서) Example
+         => 1. 기혼자
+         => 2. 미혼자
+
+     -> 3. (사원 Entity & 기혼 or 미혼 Entity 를 이어서) Example
+         => 1. 남
+         => 2. 여
+
+  = 2. 여러 차원의 다른 종류의 SubType 을 하나의 Entity 가 가질 경우
+     -> 1. 2차원이나 3차원의 형태까지 도면이나 그림으로 표현할 수 있음
+     -> 2. 4차원 이상의 차원으로 넘어가면 도면이나 그림으로 표현하는 것이 불가능해짐
+
+  = 3. 선정기준 정하기
+     -> 1. 그 SubType 이 고유한 속성을 가질 경우
+     -> 2. 독자적인 관계를 가질 경우
+         => 1. 내근 사원만 특정 Entity 를 가짐 (Example 1)
+         => 2. 설계사만 특정 Entity 를 가짐 (Example 2)
+
+
 
 
