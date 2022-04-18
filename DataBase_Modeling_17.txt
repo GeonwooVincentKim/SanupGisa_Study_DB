@@ -28,7 +28,6 @@
          => SuperType 에 있는 하나의 개체는 반드시 SubType 한 곳에만 속해야 함
      
      -> 8.  SubType 칸 안에 공통 부모가 존재해선 안됨
-     -> 9. 
 
   = 3. 기타 SubType
      -> Example
