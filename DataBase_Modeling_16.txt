@@ -82,6 +82,6 @@
      
      -> 4. Dummy Parent 개수는 Child 가 원하는 N개 만큼 만들어 사용 가능
      -> 5. 어떻게 구성되어 있는지에 관한 (구성 내역) 은 Dummy Parent 사용
-     -> 6. 자재 소유 관리 같은 경우는 Dummy 사용
+     -> 6. 자재 소유 관리 같은 경우는 Dummy Parent 사용
 
 
