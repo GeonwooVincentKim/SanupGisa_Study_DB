@@ -64,3 +64,5 @@
     Level 2.   0  0        X    => 3. 특정 그룹만 미전개
     Level 3.   0          0  0
    
+3. Multi - Column UID 의 전개
+- 1.  
