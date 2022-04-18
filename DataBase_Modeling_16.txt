@@ -14,5 +14,9 @@
   = 3. SQL 을 사용할 경우, Data 를 잠시 Save 및 다른 Data 를 실행할 필요 없이 CONNECT BY START WITH 로 스스로 모든 Data 들을 보여줌
 
 - 2. 같은 개체이지만 구분이 불가능
+- 3. Recursive 구조의 Data 를 만들 때, Key Label 를 Data Source 에서 빼면 안됨
+- 4. 반드시 넣는 방법으로 관리하는 것이 좋음
 
-3. 
+3. 순환관계 처리 SQL (형태별)
+- 1. 소그룹별 전행 (순환) 전개
+- 2. 전체그룹 집합 전개
