@@ -1,0 +1,29 @@
+1. SubType
+- 1. SubType 은 Key Entity Level 안에 내용물을 저장할 때 써야함
+- 2. 공통되는 ENTITY 와 공통되는 RELATIONSHIP 을 가지는 ENTITY 는 SUB-TYPE 을 사용
+  = 1. SUB 집합 (SUB-TYPE 을 사용하는 ENTITY)
+     -> 1. SUB 집합에서만 관리하는 RelationShip 은 SUB 집합에서부터 RelationShip 선이 그려짐
+     -> 2. SUB 집합뿐만 아니라 전체적으로 관리하는 RelationShip 은 전체적으로 관리하는 ENTITY (공통되는 ENTITY) 로부터 RelationShip 선이 그려짐
+
+  = 2. Super Type 과 Sub-Type 의 관계
+     -> 1. 1:1 관계 아님 (Example -> 사원, 정규직, 임시직)
+         => 1. 사원은 정규직, 임시직이 될 수 있음
+         => 2. 정규직이라는 사원이 있고, 임시직이라는 사원이 있음
+
+     -> 2. 구분 코드로 표현
+     -> 3. 임의의 전체 집합은 하나 이상 두 개 이상의 부분 집합을 가져야 함
+         => 부분 집합이 하나 밖에 없을 경우, 서로 같은 Level Depth 에 속함
+
+     -> 4. Super Type 에는 공통 Attribute, 공통 Relation
+     -> 5. SubType 은 자기 자신 만의 Attribute 를 가지거나, 혹은 독립적인 Relationship 을 가질 수도 있음
+         => 1. SubType 안에 아무런 독립적인 Attribute 가 없어도 Sub-Type 이 될 수도 있음
+         => 2. 반드시 독립적인 RelationShip 을 가지고 있지 않아도 됨
+
+
+
+
+
+
+
+
+
