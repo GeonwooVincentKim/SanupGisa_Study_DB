@@ -50,7 +50,7 @@
 
 3. 이런 경우의 SubType 정의 (공집합)
 - 1. 새로운 개체를 추가
-  = 1. Instance 추가
+  = Instance 추가
      -> 1. A Type, B Type 에서 쓰일 데이터를 하나씩 추가
      -> 2. Example
          => 1. 연예인 > 가수 & 탤런트 & 기타
@@ -62,8 +62,14 @@
     -> 3. 집합의 본질을 바꿀 수 있음
     -> 4. Instance 늘였는데 문제가 없을 때 새로운 Instance 를 추가 (새로운 개체 추가) 해도 됨 
 
-  = 2. 
-
 - 2. 새로운 SubType 을 추가
+  = 1. 특정 Attribute 가 겹치는 ENTITY 추가
+    -> 1. A Type, B Type A+B Type
+    -> 2. Example
+        => 1. 연예인 > 가수 & 탤런트 & 가수+탤런트
+        => 2. 가수 겸 탤런트인 A => 가수 + 탤런트 A
+  
+  = 2. Relationship 에 변화가 발생하지 않음
+  = 3. OR, IN, BETWEEN 처리 발생
 
 
