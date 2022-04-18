@@ -41,3 +41,11 @@
 
 - 2. 전체 그룹 (집합) 순환 전개
   = 1. 전체 집합끼리 전체가 하나의 Recursive 로 묶여져 있는 것
+  = 2. Group Code 를 양쪽 모두 넣어야 함
+  = 3. 전개할 RECURSIVE DATA 에 pk 는 하나일 때는 ok, But 2개일 때는 답이 없음
+     -> 1. Connect by Prior
+         => 1. where x.A = Y A'  -> Connect by Prior A = A'  (문제 없음, 정상)
+                    and x.B = Y B'                      Prior B = B'
+         
+         => 2. where x.A = Y A'  -> Connect by Prior A = A'  (자기 Record 가 B = B' 인 것은 없음, Prior 라는 Keyword 가 없어서 비정상)
+                    and x.B = Y B'                             B = B'
