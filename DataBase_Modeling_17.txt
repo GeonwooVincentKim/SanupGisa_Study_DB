@@ -17,11 +17,17 @@
      -> 4. Super Type 에는 공통 Attribute, 공통 Relation
      -> 5. SubType 은 자기 자신 만의 Attribute 를 가지거나, 혹은 독립적인 Relationship 을 가질 수도 있음
          => 1. SubType 안에 아무런 독립적인 Attribute 가 없어도 Sub-Type 이 될 수도 있음
-         => 2. 반드시 독립적인 RelationShip 을 가지고 있지 않아도 됨
+         => 2. 반드시 독립적인 Relation 을 가지고 있지 않아도 됨
 
+     -> 6. 자기 자신 만이 갖는 Attribute, 또는 RelationShip 이 전혀 없어도 SubType 으로 표현할 수도 있음
+         => 1. 일반적으로 Attribute 로 처리하는 것이 좋음
+         => 2. 필요에 따라 독립적인 RelationShip, Attribute 가 없더라도 Readability (시각적으로 전달하는 것) 를 위해서 어떤 개체들의 모임인 것을 가시적으로 보여줄 수 있음\
+         => 3. 독립적인 Attribute 가 없더라도 그려둘 수 있음
 
-
-
+     -> 7. SuperType 의 모든 Instance 는 SubType 중 단 하나와 반드시 연결되어야 함
+         => SuperType 에 있는 하나의 개체는 반드시 SubType 한 곳에만 속해야 함
+     
+     -> 8.  SubType 칸 안에 공통 부모가 존재해선 안됨
 
 
 
