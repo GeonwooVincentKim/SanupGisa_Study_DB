@@ -1,5 +1,11 @@
 1. 순환관계 처리 SQL (JOIN 과 비교)
 - 1. 순전개시는 P_ID Index 필요
-  = 효율적인 Index 사용을 위해 NULL 보다 SPACE 가 유리
+  = 1. 효율적인 Index 사용을 위해 NULL 보다 SPACE 가 유리
+  = 2. LPAD
+     -> 1. LEVEL 에 따라 Left 부터 Padding 이 일어남
+     -> 2. 책의 목차 구조처럼 Data 들을 보여줌
 
 - 2. 역전개시는 ID Index 필요
+
+2. M:M 계층 구조와 코드 부여 방법
+- 1. 
