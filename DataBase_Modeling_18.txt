@@ -151,3 +151,7 @@
   = 1. 아무 변화가 없는 경우도 Data 생성
   = 2. 그러나 완벽한 이력 관리는 불가능
 
+5. Between RelationShip
+- 1. 관계를 맺지 안항도 이미 RelationShip 존재
+- 2. BETWEEN 으로 연결되지만 1 : M 관계 유지
+- 3. Relation 을 없애더라도 관계는 존재 (Between Relation)
