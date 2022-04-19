@@ -100,4 +100,18 @@
   = 4. 과거의 데이터를 어떻게 새로 쓸 것인가
   = 5. 버전 관리를 해야 하는가 (Or 어떻게 해야 하는가)
 
+3. 이력 관리 시의 관계 변화
+- 1. 지금까지 해놓은 모델에 Attribute 가 있을 때
+  = 1. Attribute 가 1인 이유
+     -> 1. Single Value 검증 통과
+     -> 2. Normalize 에서 Post Normal 통과
+     -> 3. 남아 있는 최종 집합은 1개 
 
+  = 2. 1개에 이력을 관리 시작할 때
+     -> 1. `+`, `알파`가 되어 M 이 됨
+     -> 2. Post Normal 로 떨어져 새로운 Entity 로 추가 됨 (Association Entity)
+
+- 2. M : M 이 되어 있는 상태에서 (이력 관리 Entity, Entity A, Entity B) 다시 이력을 추가할 경우
+  = 1. M : M 이 됨
+  = 2. M : M + 새로운 UID (식별자) 탄생
+  = 3. 이력 관리를 하는 순간에 다시 새로운 이력 관리 Entity 가 탄생
