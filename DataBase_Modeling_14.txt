@@ -44,7 +44,7 @@
   = 3. 새로운 UID
 
 6. ATTRIBUTE 가 없는 Intersection Entity
-- 1. ATTRIBUTE 가 하나도 없는 ENTITY 종류
+- 1. ATTRIBUTE 가 하나도 없는 ENTITY 종류 (종속 Entity - Dependent Entity)
   = 1. Relation ENTITY 
   = 2. Intersection ENTITY 
   = 3. Association ENTITY
