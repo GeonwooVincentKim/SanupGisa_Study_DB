@@ -59,17 +59,36 @@
 
 4. 데이터 무결성
 - 1. 참조 무결성 (Referential Integrily)
-  => 1. 외부 Key 는 반드시 존재하고 있는 기본 Key 와 연결되거나 NULL 이어야 함
-  => 2. 종류
-       -> 1. FOREIGN KEY
-       -> 2. CASCADE
-       -> 3. Referenced Table
-       -> 4. Referenting Table
+  = 1. 외부 Key 는 반드시 존재하고 있는 기본 Key 와 연결되거나 NULL 이어야 함
+  = 2. 종류
+     -> 1. FOREIGN KEY       
+     -> 2. CASCADE
+     -> 3. Referenced Table
+     -> 4. Referenting Table
+
+  = 3. 참조 무결성 지정
+     -> 1. 참조 무결성 의미
+         => 불가분의 관계 (생사 고락을 같이 하겠다는 관계) 를 의미
+    
+     -> 2. 대부분의 Entity 는 주변 Entity 와 다양한 관계를 가질 수 있음
+     -> 3. 필수 관계 지정 시 대부분의 CASE Tool 의 Default 는 참조 무결성 지정
+         => 필수 관계일 때 반드시 참조 무결성을 지정하는 것이 좋은가
+
+     -> 4. 우리가 많은 사람들과 관계를 맺고 있지만, 목숨을 같이 할 만큼 필연적인 관계는 실제로 많지 않음
+
+  = 4. 제한 기능
+     -> 1. 자식의 도리 => 부모 없이는 태어나서는 안됨
+     -> 2. 부모의 도리 => 자식을 두고 죽어서는 안됨
+ 
+  = 5. NULLIFY
+     -> 1. 
 
 - 2. 속성 무결성 (Attribute Integrilly)
 - 3. 사용자 정의 무결성 (Attribute Integrilly)
 - 4. Enable / Disable
 - 5. Cascading (Delete, Update)
+  = 1. CASCADE DELETE -> 동반 자살
+  = 2. CASCADE UPDATE -> 부모에 의해 창씨개명
 
 
 
