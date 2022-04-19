@@ -17,3 +17,6 @@
   = 1. 시작-Column Start <= :value AND 종료-Column >= :value
   = 2. Index 에 두 개에 Column 이 조건을 다 갖추더라도 내 앞에 있는 Column 이 이 Query 안에 안들면 다 흘러내림
 
+- 3. Example (전화번호)
+  = 1. 할당받은 번호들을 모두 번호별로 분리해서 관리할 것인가에 대한 여부
+  = 2. 미사용 중인 전화번호를 하나로 관리할 것인가에 대한 여부
