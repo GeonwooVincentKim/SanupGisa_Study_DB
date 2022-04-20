@@ -111,14 +111,38 @@
      -> 2. Entity - Relationship Data Model (E-R Data Model)
 
 - 2. 설계
-  = 1. 데이터베이스 설계
-     -> 1. 논리 설계
+  = 데이터베이스 설계
+     -> 1. 논리 설계 (기초 설계)
      -> 2. 상세 설계
-  
-  = 2. Table 정의
-  = 3. Index, View, Cluster, 저장공간 지원
+         => 1. Table 정의
+         => 2. Index, View, Cluster, 저장 공간 지원
 
 - 3. 개발
   = 데이터베이스 생성
 
+6. 기초 설계
+- 1. 1단계
+  = 단위 ENTITY 를 Table 로
 
+- 2. 2단계
+  = 1. Attribute 를 Column 으로
+  = 2. Sample Data 작성
+
+- 3. 3단계
+  = UID 를 기본 키 (Primary Key)
+
+- 4. 4단계
+  = RELATIONSHIP 을 외부 키 (Foreign Key) 로
+
+- 5. 5단계
+  = 아크 (Arc) 옵션 처리
+     -> Exclusive 관계가 없을 경우 (복잡한 Arc 관계)
+
+- 6. 6단계
+  = SubType 옵션 처리
+     -> SubType 이 없는 경우
+
+- 7. 5단계와 6단계를 거쳐, Exclusive 관계가 있거나 SubType 관계가 있는 것
+  = 인간의 판단을 약간 넣기 
+     -> 1. Table 하나로 처리할 것인가
+     -> 2. Table 여러 개로 처리할 것인가
