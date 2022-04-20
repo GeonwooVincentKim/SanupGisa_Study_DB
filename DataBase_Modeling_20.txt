@@ -164,3 +164,32 @@
   = 1. Example -> 10만 단을 가지고 100만권의 책을 만들 수 있음
   = 2. Programmer 와 사용자의 혼동을 피하기 위해 가능한 표준화 된 약어 사용
 
+- 3. Column 명은 가능하면 짧게 지정
+  = 1. 필수 입력 속성란 Nulls / Unique 란에 NN 을 표시
+  = 2. 견본 데이터를 입력시킴
+
+- 5. 단계 별 고찰
+  = 1. 1단계
+     -> 1. 키 형태란에 ENTITY 의 UID 에 속하는 모든 속성들에 PK 를 표시
+     -> 2. PK 로 표시 된 모든 Column 들은 Nulls / Unique 단에 반드시 NN.U 로 표시 되어야 함
+         => 1. UID 를 PK 로 확정하는 작업
+         => 2. U -> PK (Primary Key)
+
+     -> 3. 여러 개의 Column 으로 UID 가 구성되어 있는 경우는 각각의 Column 에 NN.U1 을 표시
+         => 1. U1 -> PK (Primary Key)
+         => 2. U2 -> FK (Foreign Key) 또는 다른 대체 키 (Alternative Key)
+
+     -> 4. 또 다른 Unique Key 가 있다면 NN.U2 로 표시
+         => Example
+              * 1. idx => NN.U1 (PK)
+              * 2. product_idx => NN.U2 (AlterNative Key)
+
+  = 2. 2단계
+     -> 1. Table 에 외부 키 (FK) Column 을 포함시킴
+     -> 2. PK 의 일부분으로 표시
+         => 1. Nulls / Unique 란에 각각 NN.U1 를 표시
+         => 2. 키 형태란에 PK_FK 를 표시
+         => 3. 여러 UID BAR 가 있는 경우는 PK_FK1, PK_FK2
+         => 4. 여러 Column 으로 구성한 경우, PK_FK1 를 각각에 표시
+   
+     -> 3. 추가 된 FK Column 에 표본 Data 를 추가
