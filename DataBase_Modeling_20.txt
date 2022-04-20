@@ -158,3 +158,7 @@
 - 4. 사례표 (Instance Chart) 에 Table 의 역할을 간략하게 표현
 - 5. SuperType 이나 SubType 은 나중에 결정
 
+8. 속성을 Column 으로
+- 1. ENTITY 에 있는 속성들을 사례표에 Column 명에 기록
+- 2. Column 의 명칭과 속성의 명칭은 반드시 일치할 필요는 없지만, 가장 좋은 방법은 나중에 서로의 Communication 을 위해 표준된 약어를 만드는 것이 좋음
+  = Example -> 10만 단을 가지고 100만권의 책을 만들 수 있음
