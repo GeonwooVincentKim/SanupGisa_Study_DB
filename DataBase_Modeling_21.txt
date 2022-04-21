@@ -3,3 +3,9 @@
 - 2. 이 FK 는 같은 Table 내의 다른 Row 의 PK Column 을 참조하게 됨
 - 3. FK Column 명칭은 가능한 관계명칭을 반영
 - 4. 이 FK 는 결코 NN (Not Null) 이 될 수 없음
+
+2. 1 : 1 순환 관계
+- 1. 해당 Table 내에 UNIQUE 한 FK Column 추가
+- 2. 이 FK 는 같은 Table 내의 다른 Row 의 PK Column 을 참조하게 됨
+- 3. FK Column 명칭은 가능한 관계명칭을 반영
+- 4. 이 FK 는 결코 NN (Not Null) 이 될 수 없음
