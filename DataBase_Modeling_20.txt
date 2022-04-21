@@ -188,8 +188,30 @@
      -> 1. Table 에 외부 키 (FK) Column 을 포함시킴
      -> 2. PK 의 일부분으로 표시
          => 1. Nulls / Unique 란에 각각 NN.U1 를 표시
-         => 2. 키 형태란에 PK_FK 를 표시
-         => 3. 여러 UID BAR 가 있는 경우는 PK_FK1, PK_FK2
-         => 4. 여러 Column 으로 구성한 경우, PK_FK1 를 각각에 표시
+         => 2. 키 형태란에 `PK, FK` 를 표시
+         => 3. 여러 UID BAR 가 있는 경우는 `PK, FK1`, `PK, FK2`
+         => 4. 여러 Column 으로 구성한 경우, `PK, FK1` 를 각각에 표시
    
      -> 3. 추가 된 FK Column 에 표본 Data 를 추가
+
+  = 3. 3단계
+     -> 1. UID 를 기본 키 (Primary Key) 로
+         => 1. FK 의 명칭 을 결정
+         => 2. 키 형태란에 PK 표시
+         => 3. Nulls / Unique 란에 NN 표시 (Must be 관계사)
+     
+     -> 2. 표본 Data 추가
+     -> 3. UID BAR 가 있는 경우는 전 단계에서 실시되었음
+
+- 6. 관계를 외부 키 (FK) 로
+  = 1. 1 : 1 관계 (Mandatory)
+     -> 1. Mandatory 반대쪽에 있는 Table 의 PK 를 Mandatory 쪽 Table 의 FK 로
+     -> 2. NN 표시 (Not Null)
+     -> 3. 점선 쪽에 있는 UID 를 직선 쪽에 있는 UID 로 끌고 가는 것이 일반적인 규칙
+         = 한 쪽이 점선, 다른 한 쪽이 직선일 경우, 점선 쪽에 있는 식별자를 직선 쪽으로 끌고 가도록 설계 해야 함
+
+     -> 4. Example
+         = 1. P/C (고유번호, 유형, 메모리)
+         = 2. 마더보드 (일련번호, 프로세서칩, 프로세서속도)
+
+  = 2. 
