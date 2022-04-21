@@ -87,3 +87,18 @@
          => 4. SubType 에 Column 수가 많은 경우
          => 5. Transaction 에 주로 SuperType (결합 부분) 에서 발생
          => 6. SuperType 의 처리 범위가 넓고 방대하여 단일 Table Clustering 을 해야 할 때
+
+4. DataType 및 길이의 결정
+- 1. 문자인지 숫자인지를 먼저 분할
+- 2. 문자 형태인 경우
+  = 1. Column 값에 가변 길이 결정
+  = 2. Column 길이 조사 및 정의
+  = 3. LONG Type 사용 여부 결정
+  = 4. 특수형태 (SOUND, IMAGE 형태)
+  = 5. 날짜면 전부 DATE '' 를
+
+- 3. 숫자인 경우
+  = 1. 문자 형태로
+  = 2. 최대 길이 조사점 포함
+  = 3. 소수 점 출력
+ 
