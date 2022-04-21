@@ -71,6 +71,19 @@
      -> 3. 수행 속도가 좋아지는 경우 있음
      -> 4. SubType 구분 없는 행의 집합의 가공에 유의
      -> 5. 다수의 SubType 로 통합한 경우 Join 감소 효과가 크다
-     => 6. 복잡한 처리를 하나의 SQL 로 통합하기가 용이
+     -> 6. 복잡한 처리를 하나의 SQL 로 통합하기가 용이
 
-  
+  = 6. 발생할 수 있는 문제 (단점)
+     -> 1. 전체적인, 혹은 SubType 구분 없이 Data 를 처리하는 경우 UNION 발생
+     -> 2. 처리속도가 감소하는 경우가 많음
+
+  = 7. Arc (아크) 장점
+     -> 1. SuperType 과 SubType 를 각각 Table 로
+     -> 2. SuperType 과 SubType Table 간에는 Arc (아크) 관계
+     -> 3. 다음의 여러 가지 경우를 만족할 때 사용
+         => 1. 전체 Data 처리가 빈번
+         => 2. SubType 의 처리는 주로 독립적으로 발생
+         => 3. Table 을 통합했을 때 Column 의 수가 너무 많아지는 겨우
+         => 4. SubType 에 Column 수가 많은 경우
+         => 5. Transaction 에 주로 SuperType (결합 부분) 에서 발생
+         => 6. SuperType 의 처리 범위가 넓고 방대하여 단일 Table Clustering 을 해야 할 때
