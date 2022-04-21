@@ -16,12 +16,40 @@
 3. 복잡한 E-R Model 을 Table 로
 - 1. Arc 형태
   = 배타적 관계에 있는 모델을 설계하는 법
-     -> 1. 각각의 FK (Foreign Key) 를 전부 다 분리하기 
+     -> 1. 각각의 FK (Foreign Key) 를 전부 다 분리하기 (Foreign Key 분리)
          => 1. 분리를 하는 순간, NN (Not Null) 성질이 깨짐
          => 2. 어떤 FK A 에는 Data 가 들어가고, 또 어떤 FK B 에는 Data 가 안들어가는 상황 발생 가능
  
-     -> 2. 각각의 FK (Foreign Key) 전체를 전부 다 묶어서 하나의 값으로 가져오기
+     -> 2. 각각의 FK (Foreign Key) 전체를 전부 다 묶어서 하나의 값으로 가져오기 (Foreign Key 결합)
          => 1. 모든 FK 를 묶어서 하나의 값으로 가져왔으므로, 통합 FK 가 만들어짐 (FK 1개)
          => 2. FK 에 들어가는 모든 경우의 Data 가 다 들어옴
          => 3. 전체를 전부 다 묶어서 하나의 값으로 가져온 선분이 하나의 Attribute 가 되어 Type Field 가 됨 (구분 코드)
-              * 구분 코드를 넣어서 이 Data 가 FK A 출신인지, FK B 출신인지 확인
+              * 구분 코드를 넣어서 이 Data 의 FK 가 A Entity 출신인지, B Entity 출신인지 확인
+
+     -> 3. 사용해야 하는 Foreign Key 가 많을 때, `Foreign Key 결합 (외부 키 결합)` 방법을 사용하는 것이 더 바람직함
+         => 1. Exclusive 관계를 보다 편리하게 다룰 수 있음
+         => 2. Column 의 개수가 틀릴 때 잘 정리하여 Default 값을 어떤 값으로 설정할지 결정
+
+- 2. SubType 형태
+  = 1. 하나의 Table 로 통합
+     -> 1. Sub-Type 을 SuperType 에 통합하여 하나의 Table 로 생성
+     -> 2. 이 통합된 Table 은 모든 SubType 의 Data 를 포함해야 함
+     -> 3. 주로 SubType 에 적은 행의 속성이나 관계를 가진 경우에 적용
+     -> 4. 설치
+         => 1. SuperType 으로 Table 명칭 부여
+         => 2. SubType 을 구분할 수 있도록 Column 추가
+              * Type Field 를 만들고, 그 안에 구분 코드를 넣어서 SubType 을 구분 (구분 Column)
+
+         => 3. SuperType 의 속성을 Column 명으로
+         => 4. SubType 의 속성을 Column 명으로
+         => 5. SuperType 의 관계를 FK 로
+         => 6. SubType 의 관계를 FK 로
+
+    -> 5. SuperType 과 연결되어 있는 관계를 `공통 Relation`
+    -> 6. SubType 과 연결되어 있는 관계를 `별도의 Relation`
+
+  = 2. SubType Table 로 통합
+     -> SubType 별로 하나씩 가져가기
+
+  = 3. Arc 형태로 저장
+     -> SuperType 도 ENTITY 
