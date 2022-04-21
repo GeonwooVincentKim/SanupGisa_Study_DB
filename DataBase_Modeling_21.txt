@@ -53,3 +53,12 @@
 
   = 3. Arc 형태로 저장
      -> SuperType 도 ENTITY 
+
+  = 4. 장점과 단점
+     => 1. Data Access 가 보다 간편
+     => 2. VIEW 를 활용하여 각 SubType 만을 Access 하거나 수정 가능
+     => 3. 수행 속도가 좋아지는 경우 있음
+     => 4. SubType 구분 없는 행의 집합의 가공에 유의
+     => 5. 다수의 SubType 로 통합한 경우 Join 감소 효과가 크다
+     => 6. 복잡한 처리를 하나의 SQL 로 통합하기가 용이
+
