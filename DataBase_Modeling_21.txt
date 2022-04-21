@@ -53,12 +53,24 @@
 
   = 3. Arc 형태로 저장
      -> SuperType 도 ENTITY 
+  
+  = 4. Data 의 Table 로 분할
+     -> 1. 각각의 SubType 마다 하나의 Table 로 생성
+     -> 2. 분할된 Table 에는 해당 SubType 의 Data 만 통합해야 함
+     -> 3. 주로 SubType 에 많은 양의 속성이나 관계를 가진 경우에만 적용 됨
+     -> 4. SubType 인 B Table 과 C Table 을 따로 빼는 법
+         => 1. SuperType 인 A Table 이 가지고 있는 것 (공통 Relation) 들을 전부 옮김
+         => 2. SubType 인 B Table 의 속성을 옮김 (같은 SubType Depth (Level) 안에 속해 있다면 B 와 C 중 먼저 옮기고 싶은 것부터 옮겨도 상관 없음)
+         => 3. B Table 에 붙어 있는 Relation 을 옮김
+         => 4. SubType 인 C Table 의 속성을 옮김
+         => 5. C Table 에 붙어 있는 Relation 을 옮김
 
-  = 4. 장점과 단점
-     => 1. Data Access 가 보다 간편
-     => 2. VIEW 를 활용하여 각 SubType 만을 Access 하거나 수정 가능
-     => 3. 수행 속도가 좋아지는 경우 있음
-     => 4. SubType 구분 없는 행의 집합의 가공에 유의
-     => 5. 다수의 SubType 로 통합한 경우 Join 감소 효과가 크다
+  = 5. 장점과 단점
+     -> 1. Data Access 가 보다 간편
+     -> 2. VIEW 를 활용하여 각 SubType 만을 Access 하거나 수정 가능
+     -> 3. 수행 속도가 좋아지는 경우 있음
+     -> 4. SubType 구분 없는 행의 집합의 가공에 유의
+     -> 5. 다수의 SubType 로 통합한 경우 Join 감소 효과가 크다
      => 6. 복잡한 처리를 하나의 SQL 로 통합하기가 용이
 
+  
