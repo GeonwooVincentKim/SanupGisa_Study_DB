@@ -31,7 +31,7 @@
 - 9. 상황에 따라 의미상의 주어는 인조키 (얼굴마담) 로 대체 될 수 있음
 - 10. 무조건 인조키 만들거나 상속받은 구성만으로 UID 구성하는 것은 아님 
 - 11. 전략적인 판단 요구
-- 12. 자신의 ATTRIBUTE 가 아니면서 RELOATION 을 위해 존재하게 되는 ATTRIBUTE 를 자신의 ATTRIBUTE 로 표시해선 안됨
+- 12. 자신의 ATTRIBUTE 가 아니면서 RELATION 을 위해 존재하게 되는 ATTRIBUTE 를 자신의 ATTRIBUTE 로 표시해선 안됨
 
 2-1. 식별자 Tip
 - 1. 모델링의 기본키 = 식별자
