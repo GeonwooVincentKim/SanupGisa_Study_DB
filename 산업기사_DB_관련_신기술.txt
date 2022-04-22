@@ -48,4 +48,6 @@ II. DB 관련 용어
 13. 대체 키 (Alternative Key) -> 후보 키 두 개 이상, 기본 키 제외 한 나머지 후보키, 보조키
 14. 슈퍼 키 (Super Key) -> 공통된 속성들의 집합 (한 Relation 내에 있는 속성) 으로 구성된 키, 유일성 만족 O, 최소성 만족 X
 15. 외래 키 (Foreign Key) -> Relation 기본 키 참조하는 소것ㅇ
-16. 개체 무결성 (Entity Integrity)
+16. 개체 무결성 (Entity Integrity) -> 기본 키 Not Null & 중복 값 X
+17. 참조 무결성 (Referetial Integrity) -> 외래 키 Null & 기본 키 값 = 외래 키 값, 참조 불가능한 외래 키 값 가질 수 없음
+
