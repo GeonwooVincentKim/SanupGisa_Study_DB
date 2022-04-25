@@ -43,7 +43,7 @@
      -> 2. 공사 내역
      -> 3. 계약 변경
 
--4. Relation Entity
+- 4. Relation Entity
   = 1. 행위 + 개체 (Active + Entity = Relation Entity)
   = 2. Relation 이지만 M:N 이면 Entity => Relation Entity
 
