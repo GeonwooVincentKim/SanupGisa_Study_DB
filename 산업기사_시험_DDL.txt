@@ -15,7 +15,7 @@ CREATE DOMAIN
 
 -> 2. Example
     => 1. '성별' 을 '남' 또는 '여' 와 같이 정해진 1개의 문자로 표현되는 도메인 SEX 를 정의하는 SQL 문
-    => 2. CREATE DOMAIN SEX DFAULT '남' CONTRACT VALID-SEX CHECK('남', '여')
+    => 2. CREATE DOMAIN SEX DEFAULT '남' CONSTRAINT VALID-SEX CHECK('남', '여')
 
 
 CREATE TABLE
