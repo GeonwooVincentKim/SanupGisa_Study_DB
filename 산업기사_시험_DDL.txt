@@ -68,3 +68,36 @@ CREATE VIEW
 
 CREATE INDEX
 -> 1. 기본 구조
+    => CREATE [UNIQUE] INDEX 인덱스명 
+         ON 테이블명(속성명 [ASC | DESC] [, 속성명 [ASC | DESC]])
+         [CLUSTER];
+
+-> 2. Example
+    => 1. <고객> 테이블에서 UNIQUE 한 특성을 갖는 '고객번호' 속성에 대해 내림차순으로 정렬하여 '고객번호_idx' 라는 이름으로 인덱스 정의
+    => 2. CREATE UNIQUE INDEX 고객번호_IDX
+	ON 고객(고객번호 DESC)
+
+
+ALTER TABLE
+-> 1. 기본 구조
+    => 1. ALTER TABLE 테이블명 ADD 속성명 데이터_타입 [DEFAULT '기본값'];  -> 새로운 열 추가
+    => 2. ALTER TABLE 테이블명 ALTER 속성명 데이터_타입 [SET DEFAULT '기본값'];  -> 특정 열 DEFAULT 값 변경
+    => 3. ALTER TABLE 테이블명 DROP COLUMN 속성명 [CASCADE];  -> 특정 속성 삭제
+
+-> 2. Example
+    => 1. <학생> 테이블에 최대 3문자로 구성되는 '학년' 속성 추가
+    => 2. ALTER TABLE 학생 ADD 학년 VARCHAR(3)
+    => 3. <학생> 테이블의 '학번' 필드의 데이터 타입과 크기를 VARCHAR(10) 으로 하고 NULL 값이 입력되지 않도록 변경
+    => 4. ALTER TABLE 학생 ALTER 학번 SET DEFAULT VARCHAR(10) NOT NULL
+    => 5. ALTER TABLE 학생 ALTER 학번 DEFAULT VARCHAR(10) NOT NULL
+
+
+DROP TABLE
+-> 1. 기본 구조
+    => 1. DROP SCHEMA 스키마명 [CASCADE | RESTRICT]
+    => 2. DROP DOMAIN 도메인명 [CASCADE | RESTRICT]
+    => 3. DROP TABLE 테이블명 [CASCADE | RESTRICT]
+
+-> 2. Example
+    => 1. <학생> 테이블을 제거하되, <학생> 테이블을 참조하는 모든 데이터를 함께 제거
+    => 2. DROP TABLE 학생 CASCADE
