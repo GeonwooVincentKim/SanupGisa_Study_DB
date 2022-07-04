@@ -55,3 +55,32 @@ SELECT 일반 형식
 
          = 5. <사원> 테이블에서 '주소' 가 NULL 인 튜플
 	-- SELECT * FROM 사원 WHERE 주소 IS NULL
+
+
+-> 5. 정렬 검색
+    => Example
+         = 1. <사원> 테이블에서 '주소' 를 기준으로 내림차순 정렬시켜 상위 2개 튜플만 검색
+	-- SELECT TOP 2 * FROM 사원 ORDER BY DESC
+
+         = 2. <사원> 테이블에서 '부서' 를 기준으로 오름차순 정렬하고, 같은 '부서' 에 대해서는 '이름' 을 기준으로 내림차순 정렬시켜 검색
+	-- SELECT * FROM 사원 ORDER BY 부서 ASC, 이름 DESC
+
+
+-> 6. 하위 질의
+    => Example
+         = 1.  '취미' 가 '나이트댄스' 인 사원의 '이름' 과 '주소' 검색
+	-- SELECT 이름, 주소 FROM 사원 WHERE 이름 = (SELECT 이름 FROM 여가활동 WHERE 취미 = '나이트댄스')
+
+         = 2. 취미활동을 하지 않는 사원들을 검색
+	-- SELECT * FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 여가활동)
+
+         = 3. 취미활동을 하는 사원들이 부서를 검색
+	-- SELECT * FROM 사원 WHERE EXISTS (SELECT 이름 FROM 여가활동 WHERE 여가활동.이름 = 사원.이름)
+
+
+-> 7. 복수 테이블 검색
+    => Example
+         = '경력' 이 10년 이상인 사원의 '이름', '부서', '취미', '경력' 을 검색
+	-- SELECT 사원.이름, 사원.부서, 여가활동.취미, 여가활동.경력
+	   FROM 사원, 여가활동
+	   WHERE 여가활동.경력 >= 10 AND 사원.이름 = 여가활동.이름
