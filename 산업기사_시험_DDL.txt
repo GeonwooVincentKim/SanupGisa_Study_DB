@@ -128,3 +128,4 @@ DROP TABLE
     => 2. DROP TABLE 학생 CASCADE
 
 DROP TABLE 사원 CASCADE; --> 이미 망한 회사?
+DROP TABLE 사원 RESTRICT; --> 개체가 제거할 요소를 참조 중일 때, 제거를 취소
