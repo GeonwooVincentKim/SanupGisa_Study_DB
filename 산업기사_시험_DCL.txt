@@ -14,6 +14,11 @@ GRANT / REVOKE
          = 3. 사용자 ID 가 'STAR' 인 사람엑 단순히 데이터베이스에 있는 정보를 검색할 수 있는 권한을 부여하는 SQL 문
          = 4. GRANT CONNECT TO STAR
 
+GRANT DBA TO USER1;
+REVOKE RESOURCE FROM USER2;
+GRANT CONNECT TO USER3;
+
+
 -> 2. 테이블 및 속성에 대한 권한 부여 및 취소
     => 1. 기본 구조
          = 1. GRANT 권한_리스트 ON 개체 TO 사용자 [WITH GRANT OPTION]
@@ -24,6 +29,11 @@ GRANT / REVOKE
          = 2. GRANT ALL ON 고객 TO NAVI WITH GRANT OPTION
          = 3. 사용자 ID 가 'STAR' 인 사람에게 <고객> 테이블에 대한 권한 중, UPDATE 권한을 다른 사람에게 부여할 수 있는 권한만 취소하는 SQL 문
          = 4. REVOKE GRANT OPTION FOR UPDATE ON 고객 FROM STAR
+
+GRANT ALL ON 고객사 TO USER1 WITH GRANT OPTION;
+REVOKE GRANT OPTION FOR INSERT, UPDATE, DELETE ON 고객사 FROM USER2;
+GRANT DELETE ON 강좌 TO 김하늘 WITH GRANT OPTION;
+REVOKE GRANT OPTION FOR INSERT, UPDATE, DELETE ON 교수 FROM 임꺽정;
 
 
 COMMIT / ROLLBACK
@@ -53,3 +63,6 @@ SAVEPOINT
 
     => 9. SAVEPOINT 없이 ROLLBACK 수행
     => 10. ROLLBACK
+
+SAVEPOINT S1;
+ROLLBACK TO S1;
