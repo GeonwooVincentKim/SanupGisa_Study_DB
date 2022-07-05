@@ -60,3 +60,27 @@ SELECT 일반 형식
 	-- SELECT 부서, 상여내역, SUM(상여금) AS 상여금합계
 	    FROM 상여금
 	    GROUP BY ROLLUP(부서, 상여내역)
+
+         = 5. <싱야금> 테이블이 '부서', '상여내역', '상여금' 에 대해 부서별 상여내역 별 소계와 전체 합계 검색
+	   (속성명 = '상여금합계', CUBE 함수 이용)
+	-- SELECT 부서, 상여내역, SUM(상여금) AS 상여금합계
+	    FROM 상여금
+	    GROUP BY CUBE(부서, 상여내역)
+
+
+-> 6. 집합 연산자를 이용한 통합 질의
+    => 1. 표기 형식
+         = SELECT 속성명1, 속성명2, ...
+	FROM 테이블명
+	UNION | UNION ALL | INTERACT | EXCEPT
+	SELECT 속성명1, 속성명2, ...
+	FROM 테이블명
+	[ORDER BY 속성명 [ASC | DESC]];
+
+    => 2. 집합 연산자의 종류 (통합 질의의 종류)
+         = 1. UNION -> 두 SELECT 문의 조회 결과 통합하여 모두 출력, 중복된 행은 한 번만 출력 --> 합집함
+         = 2. UNION ALL -> 두 SELECT 문의 조회 결과 통합하여 모두 출력, 합집합, 중복된 행도 그대로 출력 --> 합집합
+         = 3. INTERSECT -> 두 SELECT 문의 조회 결과 중 공통된 행만 출력 --> 교집합
+         = 4. EXCEPT -> 첫 번째 SELECT 문의 조회 결과에서 두 번째 SELECT 문의 조회 결과를 제외한 행 출력 --> 차집합
+
+    => 3. Example
