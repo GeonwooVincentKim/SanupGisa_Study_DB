@@ -84,3 +84,8 @@ SELECT 일반 형식
          = 4. EXCEPT -> 첫 번째 SELECT 문의 조회 결과에서 두 번째 SELECT 문의 조회 결과를 제외한 행 출력 --> 차집합
 
     => 3. Example
+         = 1. <사원> 테이블과 <직원> 테이블을 통합하는 질의문 (단, 같은 레코드가 중복되어 나오지 않게 출력)
+	-- SELECT * FROM 사원 UNION SELECT * FROM 직원
+
+         = 2. <사원> 테이블과 <직원> 테이블에 공통으로 존재하는 레코드만 통합하는 질의문
+	-- SELECT * FROM 사원 INTERSECT SELECT * FROM 직원
