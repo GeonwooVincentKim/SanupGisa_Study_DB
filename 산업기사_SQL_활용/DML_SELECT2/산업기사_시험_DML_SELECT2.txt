@@ -28,11 +28,35 @@ SELECT 일반 형식
 
 
 -> 3. WINDOW 함수
-    => 1. ROW_NUMBER() -> 윈도우별로 각 레코드에 대한 일련번호 반환
+    => 1. ROW_NUMBER() -> 윈도우별로 각 레코드에 대한 일련번호 반환]
+         = ROW_NUMBER() OVER (PARTITION BY 속성명1 ORDER BY DESC)
+
     => 2. RANK() -> 윈도우별 순위 반환, 공동 순위 반영
     => 3. DENSE_RANK() -> 윈도우별 순위 반환, 공동 순위를 무시하고, 순위를 부여
 
 
 -> 4. WINDOW 함수 이용 검색
     => Example
-         = 1. 
+         = 1. <상여금> 테이블에서 '상여내역' 별로 '상여금' 에 대한 일련 번호 (내림차순, 속성명 = 'NO')
+	-- SELECT 상여내역, 상여금 ROW_NUMBER() OVER (PARTITION BY 상여내역 DESC) AS NO FROM 상여금
+
+         = 2. <상여금> 테이블에서 '상여내역' 별로 '상여금' 에 대한 순위 (내림차순, 속성명 = '상여금순위', RANK() 함수 이용)
+	-- SELECT 상여내역, 상여금 RANK() OVER (PARTITION BY 상여내역 DESC) AS 상여금순위 FROM 상여금
+
+
+-> 5. 그룹 지정 검색 (Group By)
+    => Example
+         = 1. <상여금> 테이블에서 '부서' 별로 '상여금' 의 평균
+	-- SELECT 부서, AVG(상여금) AS 평균 FROM 상여금 GROUP BY 부서
+
+         = 2. <상여금> 테이블에서 부서별 튜플 수 검색
+	-- SELECT 부서, COUNT(*) AS 사원 수 FROM 상여금 GROUP BY 부서
+
+         = 3. <상여금> 테이블에서 '상여금' 이 100 이상인 사원이 2명 이상인 '부서' 의 튜플 수
+	-- SELECT 부서, COUNT(*) AS 사원 수 FROM 상여금 WHERE 상여금 >= 100 GROUP BY 부서 HAVING COUNT(*) >= 2
+
+         = 4. <상여금> 테이블의 '부서', '상여내역', '상여금' 에 대해 부서별 상여내역 별 소계와 전체 합계 검색 
+	   (속성명 = '상여금합계', ROLLUP 함수 이용)
+	-- SELECT 부서, 상여내역, SUM(상여금) AS 상여금합계
+	    FROM 상여금
+	    GROUP BY ROLLUP(부서, 상여내역)
