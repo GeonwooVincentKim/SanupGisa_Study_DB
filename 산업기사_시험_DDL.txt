@@ -7,6 +7,7 @@ CREATE SCHEMA
     => 2. CREATE SCHEMA 대학교 AUTHORIZATION 홍길동;
 
 CREATE SCHEME 회사 AUTHORIZATION 김사원;
+CREATE SCHEME 학교 AUTHORIZATION 김학생;
 
 
 CREATE DOMAIN
@@ -19,8 +20,8 @@ CREATE DOMAIN
     => 1. '성별' 을 '남' 또는 '여' 와 같이 정해진 1개의 문자로 표현되는 도메인 SEX 를 정의하는 SQL 문
     => 2. CREATE DOMAIN SEX CHAR(1) DEFAULT '남' CONSTRAINT VALID-SEX CHECK('남', '여')
 
-CREATE DOMAIN SEX CHAR(1) DEFAULT '남' CONSTRAINT VALID-SEX CHECK ('남', '여');
 CREATE DOMAIN 직위 VARCHAR(2) DEFAULT '사원' CONSTRAINT VALID-직위 CHECK ('사원', '대리', '과장', '부사', '이사', '사장');
+CREATE DOMAIN 나이 INT DEFAULT '인적정보' CONSTRAINT VALID-나이 CHECK(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
 
 
 CREATE TABLE
@@ -70,6 +71,7 @@ CREATE TABLE 직원
 
 
 <제약조건명이 없을 때>
+==> 1. Foreign Key 제약 조건 있을 때
 CREATE TABLE Instructore
   ID CHAR(5) PRIMARY KEY,
   이름 CHAR(15) NOT NULL,
@@ -77,6 +79,18 @@ CREATE TABLE Instructore
   FOREIGN KEY (DEPT) REFERENCES Department(dept)
     ON UPDATE CASCADE
     ON DELETE SET NULL
+
+==> 2. Foreign Key 제약 조건 없을 때
+CREATE TABLE 직원
+  사원 CHAR(15) PRIMARY KEY,
+  이름 CHAR(4) NOT NULL,
+  전화번호 CHAR(20),
+  부서번호 CHAR(10),
+  경력 NUMBER,
+  기본급 NUMBER,
+  UNIQUE(전화번호),
+  CHECK (기본급 >= 1000000),
+  FOREIGN KEY 부서번호 REFERENCES 부서(부서번호)
 
 
 CREATE VIEW
@@ -96,6 +110,11 @@ CREATE VIEW VIP고객(성명, 전화번호, 직업명)
    FROM 고객, 직업
    WHERE A.ID = B.ID 
 
+CREATE VIEW 3학년 학생 (학번, 주민등록번호, 이름, 학년, 전화번호, 주소)
+  AS SELECT *
+  FROM 학생
+  WHERE 학생.학년 = 3
+
 
 CREATE INDEX
 -> 1. 기본 구조
@@ -110,6 +129,9 @@ CREATE INDEX
 
 CREATE UNIQUE INDEX 사원번호_IDX
 ON 사원(사원번호 DESC)
+
+CREATE UNIQUE INDEX 학생번호_IDX
+ON 학생(이름 DESC)
 
 
 ALTER TABLE
@@ -127,6 +149,7 @@ ALTER TABLE
 
 ALTER TABLE 사원 ADD 나이 DEFAULT INTEGER
 ALTER TABLE Patient ADD job DEFAULT CHAR(20)
+ALTER TABLE 사원 ALTER 이름 SET DEFAULT VARCHAR(30) NOT NULL
 
 
 DROP TABLE
