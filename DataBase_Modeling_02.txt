@@ -18,7 +18,28 @@
      -> 3. 저장공간 지정
 
 - 3. 데이터베이스 생성
-  = 1. 개발
+  = 개발
+
+- 4. Business Requirement
+  = 1. Information 요구사항
+     -> 1. 논리적 Data Modeling
+         => Data Model Entity 정의
+     
+     -> 2. DB 설계
+         => Table 정의, Index, View, Cluster, 저장공간 지정
+
+     -> 3. DB Build
+         => 가동 Database
+
+  = 2. Application 요구사항
+     -> 1. 기본 Data Modeling
+         => Function 정의
+
+     -> 2. Application 설계
+         => Module 설계
+
+     -> 3. Application 개발
+         => 가동 불가능한 Application
 
 3. ERD
 - 1. 데이터 모델링

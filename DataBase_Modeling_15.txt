@@ -86,9 +86,56 @@
 - 1. CODE 대비법 (CODE 법)
   = 1. 사용하기가 쉽고 간편하며, 수행속에 상대적으로 유리
   = 2. 구조 변경에 매우 취약 (식별자 변경)
+     -> 1. UID 에는, Identify (식별자) 나 Structure (주소, 이름(개명), 나이) 가 존재
+     -> 2. UID 잘못 변경 시, Structure 는 바뀔 수 있지만, Identify 가 변경되면 데이터의 일관성이 사라지므로, Identify 는 변경되면 안됨
+     -> 3. UID 변경 시, Identify 는 한 번 등록이 되었으면 바뀔 수 없으므로, Structure 만 변경이 됨
+
   = 3. 구조 변경 시 과거 Data 의 수정 필요
+  = 4. M : M 관계일 때 사용할 경우, 동일한 개체의 이름이 300개 (여러 개)가 되는 말도 안되는 상황이 생김
+     -> 구조 변화가 많이 일어나지 않는 목록은 CODE 대비법으로 처리
+         => Example -> 개정 과목
 
 - 2. 순환 전개법
   = 1. 구조 (순환 관계) 가 변경되도 식별자는 변경하지 않아 과거 Data 변경 불필요
+     -> 1. UID 의 Identify 는 변경되지 않음
+     -> 2. UID 의 Structure 만 변경되므로, 문제 없음
+     -> 3. Implementation 능력이 없이 사용하면, 굉장이 고생할 수 있음
+
   = 2. 사용이 약간 불편하며, 숙달된 기술력 필요
   = 3. 고도의 기술력 필요 (잘못 사용 시 수행속도 저하)
+
+6. 순환 관계의 처리 (M : M)
+- 순환 (Recursive) 관계와 BOM 구조 특징
+  = 가장 Simple 한 방법으로 Data 를 관리하고 있다가 내가 풀고 싶은 구조가 나오면 어디서부터 역전개, 어디서부터 순전개라고 말하는 순간에 이 구조는 정해야 함
+
+7. 순환 관계의 처리 SQL (JOIN 과 비교)
+- 1. 기존의 JOIN 문장과 비교를 해서 Connected-By Starter 를 가지고 풀어내는 Structuer 문장 (JOIN Table)
+  = 1. 최종적으로는 Drive 조건 Check 조건을 다 만족하는 최종 결과가 나옴
+  = 2. 일을 하는 내부 과정을 살펴보면 일을 주도하는 부분이 있고, 그 주도해서 끄집어 내놓은 것을 다시 Check 조건에서 버리는 역할이 있음
+  = 3. Driving 관리자 => DataBase 의 Optimizer 가 누가 관리자인지 판단
+
+- 2. 기존의 JOIN 문장에 비교를 해서 설명하자면, 두 개의 구조상의 차이가 무엇인지, 동일한 것이 무엇인지 이해해야 함 (JOIN 조건)
+  = 1. CONNECT BY START With 문장의 연결 고리는 WHERE Clause 가 아님
+  = 2. Connect By 절에 쓴 Condition 이 Join 의 연결고리
+
+- 3. 전처리 조건
+  = START WITH => Driving Condition
+
+- 4. CHECK 조건
+  = 1. Driving Condition 을 뺀 나머지는 CHECK 조건
+  = 2. Check 조건은 Where Clause 에 있음
+
+- 5. WHERE 조건
+  = 1. CONNECT BY (Condition) => 전개를
+  = 2. START WITH => 시작해서
+  = 3. CONNECT BY => 전개를 연결한 다음에
+  = 4. WHERE => Check 조건을 봐서 쓸 것인지 부릴 것인지 판단하는 조건
+     -> 1. 일의 양을 줄여주는 조건 아님
+     -> 2. 일을 나열해 놓고 주문이 늘 것인지 버릴 것인지 결정해주는 조건 => (WHERE 조건)
+     -> 3. WHERE 조건을 상세하게 주고, 나머지 조건을 제대로 주지 않는다면 일 (데이터) 이 스스로 판단한 필요없는 것 (Data) 들의 수가 많아짐
+         => 1. Connected by Start 의 매커니즘을 모르면 이런 문제 발생
+         => 2. 이 매커니즘에 관한 내용이 부족해서 사람들이 착각하여 문제가 발생 됨
+
+  = 5. Recursive 
+     -> 1. 두 개의 Table JOIN 시, Y 는 X 의 Data 를 읽어서 대응되는 Y 를 찾기 (Recursive 아닐 경우)
+     -> 2. Recursive 를 실행 시, 지금 차 있는 Record 를 가지고 선택된 Record 와 연결된 자식 Record 을 찾을 때 사용 (Recursive 일 경우)
