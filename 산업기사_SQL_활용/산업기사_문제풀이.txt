@@ -1,0 +1,20 @@
+1. DROP TABLE 직원
+
+2. 
+CREATE TABLE 직원
+사번 CHAR(15) PRIMARY KEY,
+이름 CHAR(4) NOT NULL,
+전화번호 CHAR(20),
+부서번호 CHAR(10),
+경력 NUMBER,
+기본급 NUMBER,
+CONSTRAINT KEY 부서번호 REFERENCES 부서(부서번호),
+UNIQUE(전화번호)
+
+
+3. SELECT * FROM 사원
+
+4. SELECT DISTINCT 이름 FROM 자격증 WHERE 경력 >= 3
+
+5. SELECT 이름, 재직년도, 기본급 FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 자격증) 
+
