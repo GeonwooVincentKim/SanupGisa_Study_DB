@@ -16,5 +16,39 @@ UNIQUE(전화번호)
 
 4. SELECT DISTINCT 이름 FROM 자격증 WHERE 경력 >= 3
 
-5. SELECT 이름, 재직년도, 기본급 FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 자격증) 
+** (NOT IN) 5. SELECT 이름, 재직년도, 기본급 FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 자격증)
+
+6. SELECT 이름 FROM 자격증 HAVING COUNT(자격증) >= 2
+
+** (WITH CHECK OPTION) 7. CREATE VIEW 3학년학생 AS
+   SELECT 학번, 주민등록번호, 이름, 학년, 전화번호, 주소 FROM 학생 WHERE 학년 = 3 WITH CHECK OPTION
+
+** (RIGHT OUTER JOIN) 8. SELECT 학교명, 지역 FROM 학교 RIGHT OUTER JOIN 학과 ON 학교.학교명 = 학과.학과명 WHERE 학과명 IS NULL
+
+** (LEFT(주소, 2)) 9. SELECT LEFT(주소, 2) AS 지역, SUM(수량) AS 수량합계 FROM 주문현황, 회원관리 WHERE 주문현황.고객ID = 회원관리.고객ID AND MONTH(주문날짜) = 5 GROUP BY LEFT(주소, 2)
+
+10. CREATE VIEW 강좌교수 AS SELECT 강좌명, 강의실, 수강제한인원, 교수 이름 FROM 강좌, 교수 WHERE 강좌.교수번호 = 교수.교수번호
+
+11. SELECT 예금번호, 도시 FROM 예금계좌 지점 WHERE 지점.지점명 = 예금계좌.지점명 ORDER BY 예금번호 DESC
+
+12.
+- 1. COMMIT
+- 2. ROLLBACK
+- 3. GRANT
+- 4. REVOKE
+- 5. CASCADE
+
+13. GRANT SELECT ON 강좌 TO 홍길동
+
+14. GRANT ALL ON 학생 TO 홍길동 WITH GRANT OPTION
+
+15. REVOKE INSERT ON 교수 FROM 박문수
+
+16. REVOKE ALL ON 교수 FROM 박문수 CASCADE
+
+17. 
+- 1. DELETE * FROM 상품 WHERE 제품코드 = 'P-20'
+- 2. INSERT INTO 상품(제품코드, 상품명, 단가, 제조경비) VALUES ("P-20", "PLAYER", 8800, 6600
+
+18.
 
