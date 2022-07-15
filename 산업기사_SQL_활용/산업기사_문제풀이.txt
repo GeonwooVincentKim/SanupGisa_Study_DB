@@ -75,4 +75,9 @@ UNIQUE(전화번호)
 
 25. ALTER TABLE 학생 ADD 주소 CHAR(20)
 
-26. 
+** (LIKE 가운데 조건) 26. SELECT * FROM 공급자 WHERE 공급자명 LIKE('%신%')
+
+27. 15000
+
+28. UPDATE 성적 SET 점수 = 점수 + 10 WHERE 이름 = 'LEE'
+
