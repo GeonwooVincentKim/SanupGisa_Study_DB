@@ -34,6 +34,15 @@ GRANT CONNECT TO USER3;
          = 2. GRANT ALL ON 고객 TO NAVI WITH GRANT OPTION
          = 3. 사용자 ID 가 'STAR' 인 사람에게 <고객> 테이블에 대한 권한 중, UPDATE 권한을 다른 사람에게 부여할 수 있는 권한만 취소하는 SQL 문
          = 4. REVOKE GRANT OPTION FOR UPDATE ON 고객 FROM STAR
+	 
+	 = 5. 사용자 ID 가 'NAVI' 인 사람에게 <고객> 테이블에 대한 모든 권한 부여
+	 = 6. GRANT ALL ON 고객 TO NAVI
+	 = 7. 사용자 ID 가 'STAR' 인 사람에게 <고객> 테이블에 대한 권한 중, UPDATE 권한 취소하며, 취소 시 권한을 부여받았던 사용자가 다른 사용자에게 부여한 권한도 연쇄적으로 취소
+	 = 8. REVOKE UPDATE ON 고객 FROM STAR CASCADE
+	 
+	 = 9. 사용자 ID 가 'STAR' 인 사람에게 <고객> 테이블에 대한 모든 권한 취소
+	 = 10. REVOKE ALL ON 고객 FROM STAR
+
 
 GRANT ALL ON 고객사 TO USER1 WITH GRANT OPTION;
 REVOKE GRANT OPTION FOR INSERT, UPDATE, DELETE ON 고객사 FROM USER2;
