@@ -24,7 +24,12 @@ GRANT CONNECT TO USER3;
          = 1. GRANT 권한_리스트 ON 개체 TO 사용자 [WITH GRANT OPTION]
          = 2. REVOKE [GRANT OPTION FOR] 권한_리스트 ON 개체 FROM 사용자 [CASCADE]
 
-    => 2. Example
+    => 2. 자세한 사용법
+	 = 1. WITH GRANT OPTION -> 부여받은 권한을 다른 사용자에게 다시 부여할 수 있는 권한
+	 = 2. GRANT OPTION FOR -> 다른 사용자에게 권한을 부여할 수 있는 권한을 취소
+	 = 3. CASCADE -> 권한 취소 시 권한을 부여받았던 사용자가 다른 사용자에게 부여한 권한도 연쇄적으로 취소
+
+    => 3. Example
          = 1. 사용자 ID 가 'NAVI' 인 사람에게 <고객> 테이블에 대한 모든 권한과 다른 사람에게 권한을 부여할 수 있는 권한까지 부여하는 SQL 문
          = 2. GRANT ALL ON 고객 TO NAVI WITH GRANT OPTION
          = 3. 사용자 ID 가 'STAR' 인 사람에게 <고객> 테이블에 대한 권한 중, UPDATE 권한을 다른 사람에게 부여할 수 있는 권한만 취소하는 SQL 문
