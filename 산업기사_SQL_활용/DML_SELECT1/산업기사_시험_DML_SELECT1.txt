@@ -79,7 +79,8 @@ SELECT 일반 형식
 	-- SELECT 이름, 주소 FROM 사원 WHERE 이름 = (SELECT 이름 FROM 여가활동 WHERE 취미 = '나이트댄스')
 
          = 2. 취미활동을 하지 않는 사원들을 검색
-	-- SELECT * FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 여가활동)  --> 포함되지 않은 데이터
+	-- 1. SELECT * FROM 사원 WHERE 이름 NOT IN (SELECT 이름 FROM 여가활동)  --> 포함되지 않은 데이터
+            -- 2. SELECT * FROM 사원 WHERE 이름 <> (SELECT 이름 FROM 여가활동) --> 포함되지 않은 데이터
 
          = 3. 취미활동을 하는 사원들이 부서를 검색
 	-- SELECT * FROM 사원 WHERE EXISTS (SELECT 이름 FROM 여가활동 WHERE 여가활동.이름 = 사원.이름)
