@@ -24,5 +24,43 @@ III. CREATE TABLE
 각 속성의 데이터 타입은 적당하게 지정한다. 단 '성별' 은 도메인 GENDER 를 사용한다.
 
 CREATE TABLE 학생
-이름 NOT NULL,
+(이름 VARCHAR(15) NOT NULL),
+학번 CHAR(8) PRIMARY KEY,
+전공 CHAR(5),
+성별 SEX,
+생년월일 DATE,
+FOREIGN KEY(전공) REFERENCES 학과(학과코드)
+  ON UPDATE CASCADE,
+  ON DELETE SET NULL,
+CONSTRAINT 생년월일제약 CHECK(생년월일 >= '1980-01-01');
 
+
+IV. CREATE VIEW
+
+<고객> 테이블에서 '주소' 가 '안산시'인 고객들이 '성명'과 '전화번호'를 '안산고객'이라는 뷰로 정의
+CREATE VIEW 안산고객(성명, 전화번호)
+AS SELECT 성명, 전화번호
+FROM 고객
+WHERE 주소 = '안산시'
+
+
+V. CREATE INDEX
+
+<고객> 테이블에서 UNIQUE 한 특성을 갖는 '고객번호' 속성에 대해 내림차순으로 정렬하여 '고객번호_idx' 라는 이름으로 인덱스를 정의
+CREATE UNIQUE INDEX 고객번호_idx
+ON SELECT 고객(고객번호) DESC
+
+
+VI. ALTER TABLE
+
+<학생> 테이블에 최대 3문자로 구성되는 '학년' 속성 추가
+ALTER TABLE 학생 ADD 학년 VARCHAR(3);
+
+<학생> 테이블의 '학번' 필드의 데이터 타입과 크기를 VARCHAR(10) 으로 하고 NULL 값이 입력되지 않도록 변경
+ALTER TABLE 학생 ALTER 학번 VARCHAR(10) NOT NULL
+
+
+VII. DROP
+
+<학생> 테이블을 제거하되, <학생> 테이블을 참조하는 모든 데이터를 함께 제거
+DROP TABLE 학생 CASCADE
